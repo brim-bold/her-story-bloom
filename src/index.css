@@ -1,0 +1,136 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Definition of the design system. All colors, gradients, fonts, etc should be defined here. 
+All colors MUST be HSL.
+*/
+
+@layer base {
+  :root {
+    /* Background & surfaces */
+    --background: 45 29% 97%;
+    --foreground: 25 47% 9%;
+    
+    /* Custom icon color */
+    --icon-color: 27 69% 60%;
+    
+    --card: 0 0% 100%;
+    --card-foreground: 25 47% 9%;
+    
+    --popover: 0 0% 100%;
+    --popover-foreground: 25 47% 9%;
+    
+    /* Brand colors - warm oranges and pinks */
+    --primary: 25 85% 55%;
+    --primary-foreground: 0 0% 100%;
+    --primary-glow: 35 100% 65%;
+    
+    /* Secondary - soft stone tones */
+    --secondary: 30 15% 92%;
+    --secondary-foreground: 25 47% 15%;
+    
+    /* Muted tones */
+    --muted: 30 15% 92%;
+    --muted-foreground: 25 15% 45%;
+    
+    /* Accent - coral and pink tones */
+    --accent: 340 75% 75%;
+    --accent-foreground: 25 47% 15%;
+    --coral: 10 85% 70%;
+    
+    /* Interaction states */
+    --destructive: 0 84% 60%;
+    --destructive-foreground: 0 0% 100%;
+    
+    --border: 30 25% 85%;
+    --input: 30 25% 85%;
+    --ring: 25 85% 55%;
+    
+    /* Design system extensions */
+    --radius: 1rem;
+    
+    /* Gradients for the app */
+    --gradient-primary: linear-gradient(135deg, hsl(25 85% 55%), hsl(340 75% 75%));
+    --gradient-welcome: linear-gradient(180deg, hsl(45 29% 97%), hsl(45 29% 97%));
+    --gradient-discover: linear-gradient(180deg, hsl(45 29% 97%), hsl(45 29% 97%));
+    --gradient-events: linear-gradient(180deg, hsl(45 29% 97%), hsl(45 29% 97%));
+    --gradient-messages: linear-gradient(180deg, hsl(45 29% 97%), hsl(45 29% 97%));
+    --gradient-chat: linear-gradient(180deg, hsl(45 29% 97%), hsl(45 29% 97%));
+    --gradient-profile: linear-gradient(180deg, hsl(45 29% 97%), hsl(45 29% 97%));
+    --gradient-button: linear-gradient(90deg, hsl(25 85% 60%), hsl(340 75% 70%));
+    
+    /* Shadows with brand colors */
+    --shadow-card: 0 4px 20px -4px hsl(25 85% 55% / 0.1);
+    --shadow-elegant: 0 10px 30px -10px hsl(25 85% 55% / 0.2);
+    --shadow-glow: 0 0 40px hsl(35 100% 65% / 0.3);
+    
+    /* Animations */
+    --transition-smooth: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    --transition-spring: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+
+    --sidebar-background: 0 0% 98%;
+
+    --sidebar-foreground: 240 5.3% 26.1%;
+
+    --sidebar-primary: 240 5.9% 10%;
+
+    --sidebar-primary-foreground: 0 0% 98%;
+
+    --sidebar-accent: 240 4.8% 95.9%;
+
+    --sidebar-accent-foreground: 240 5.9% 10%;
+
+    --sidebar-border: 220 13% 91%;
+
+    --sidebar-ring: 217.2 91.2% 59.8%;
+  }
+
+  .dark {
+    --background: 25 35% 8%;
+    --foreground: 35 100% 95%;
+    
+    --card: 25 35% 10%;
+    --card-foreground: 35 100% 95%;
+    
+    --popover: 25 35% 10%;
+    --popover-foreground: 35 100% 95%;
+    
+    --primary: 35 100% 65%;
+    --primary-foreground: 25 35% 8%;
+    
+    --secondary: 25 25% 15%;
+    --secondary-foreground: 35 100% 95%;
+    
+    --muted: 25 25% 15%;
+    --muted-foreground: 35 30% 65%;
+    
+    --accent: 340 65% 65%;
+    --accent-foreground: 25 35% 8%;
+    
+    --destructive: 0 75% 55%;
+    --destructive-foreground: 35 100% 95%;
+    
+    --border: 25 25% 20%;
+    --input: 25 25% 20%;
+    --ring: 35 100% 65%;
+    --sidebar-background: 240 5.9% 10%;
+    --sidebar-foreground: 240 4.8% 95.9%;
+    --sidebar-primary: 224.3 76.3% 48%;
+    --sidebar-primary-foreground: 0 0% 100%;
+    --sidebar-accent: 240 3.7% 15.9%;
+    --sidebar-accent-foreground: 240 4.8% 95.9%;
+    --sidebar-border: 240 3.7% 15.9%;
+    --sidebar-ring: 217.2 91.2% 59.8%;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  body {
+    @apply bg-background text-foreground;
+  }
+}
