@@ -134,7 +134,7 @@ const EditProfile = () => {
                                   <Button variant="ghost" size="sm" onClick={() => navigate('/profile')} className="hover:bg-secondary">
                                               <ArrowLeft className="w-4 h-4 mr-2" />
                                               Back
-                                  </Button>Button>
+                                  </Button>
                                   <h1 className="text-2xl font-bold text-foreground font-serif">Edit Profile</h1>
                         </div>
                 
@@ -156,8 +156,8 @@ const EditProfile = () => {
                                           Complete your profile to appear in the member directory and get more connections!
                           </p>
                                               )}
-                                  </CardContent>CardContent>
-                        </Card>Card>
+                                  </CardContent>
+                        </Card>
                 
                         <Card className="shadow-card border-border">
                                   <CardHeader>
@@ -166,8 +166,8 @@ const EditProfile = () => {
                                                                             <Save className="w-4 h-4 text-primary" />
                                                             </div>
                                                             Update Your Information
-                                              </CardTitle>CardTitle>
-                                  </CardHeader>CardHeader>
+                                              </CardTitle>
+                                  </CardHeader>
                                   <CardContent className="space-y-6">
                                     {/* Avatar Upload */}
                                               <div className="flex justify-center">
@@ -181,7 +181,7 @@ const EditProfile = () => {
                                     {/* Name Fields */}
                                               <div className="grid grid-cols-2 gap-4">
                                                             <div className="space-y-2">
-                                                                            <Label htmlFor="firstName">First Name</Label>Label>
+                                                                            <Label htmlFor="firstName">First Name</Label>
                                                                             <Input
                                                                                                 id="firstName"
                                                                                                 value={formData.first_name}
@@ -190,7 +190,7 @@ const EditProfile = () => {
                                                                                               />
                                                             </div>
                                                             <div className="space-y-2">
-                                                                            <Label htmlFor="lastName">Last Name</Label>Label>
+                                                                            <Label htmlFor="lastName">Last Name</Label>
                                                                             <Input
                                                                                                 id="lastName"
                                                                                                 value={formData.last_name}
@@ -203,7 +203,7 @@ const EditProfile = () => {
                                     {/* Location and Age */}
                                               <div className="grid grid-cols-2 gap-4">
                                                             <div className="space-y-2">
-                                                                            <Label htmlFor="location">Location</Label>Label>
+                                                                            <Label htmlFor="location">Location</Label>
                                                                             <Input
                                                                                                 id="location"
                                                                                                 value={formData.location}
@@ -212,7 +212,7 @@ const EditProfile = () => {
                                                                                               />
                                                             </div>
                                                             <div className="space-y-2">
-                                                                            <Label htmlFor="age">Age</Label>Label>
+                                                                            <Label htmlFor="age">Age</Label>
                                                                             <Input
                                                                                                 id="age"
                                                                                                 type="number"
@@ -227,7 +227,7 @@ const EditProfile = () => {
                                   
                                     {/* Bio */}
                                               <div className="space-y-2">
-                                                            <Label htmlFor="bio">Bio</Label>Label>
+                                                            <Label htmlFor="bio">Bio</Label>
                                                             <Textarea
                                                                               id="bio"
                                                                               value={formData.bio}
@@ -242,7 +242,7 @@ const EditProfile = () => {
                                   
                                     {/* Interests */}
                                               <div className="space-y-4">
-                                                            <Label>Interests</Label>Label>
+                                                            <Label>Interests</Label>
                                               
                                                 {/* Current interests */}
                                                 {formData.interests.length > 0 && (
@@ -260,7 +260,7 @@ const EditProfile = () => {
                                                                                                 >
                                                                                                 <X className="w-3 h-3" />
                                                                         </button>
-                                                  </Badge>Badge>
+                                                  </Badge>
                                                 ))}
                             </div>
                                                             )}
@@ -280,7 +280,7 @@ const EditProfile = () => {
                                                                                                 className="bg-primary/10 text-primary hover:bg-primary/20"
                                                                                               >
                                                                                               <Plus className="w-4 h-4" />
-                                                                            </Button>Button>
+                                                                            </Button>
                                                             </div>
                                               
                                                 {/* Suggested interests */}
@@ -317,13 +317,13 @@ const EditProfile = () => {
                                                                               className="flex-1 bg-gradient-button hover:shadow-glow"
                                                                             >
                                                               {saving ? 'Saving...' : 'Save Changes'}
-                                                            </Button>Button>
+                                                            </Button>
                                                             <Button variant="outline" onClick={() => navigate('/profile')} disabled={saving}>
                                                                             Cancel
-                                                            </Button>Button>
+                                                            </Button>
                                               </div>
-                                  </CardContent>CardContent>
-                        </Card>Card>
+                                  </CardContent>
+                        </Card>
                 </div>
           </div>
         );
