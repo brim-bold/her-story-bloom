@@ -131,64 +131,64 @@ const Events = () => {
           <div className="flex-1 bg-gradient-events p-6 animate-fade-in">
                 <div className="mb-6 flex items-center justify-between">
                         <div>
-                                  <h2 className="text-xl font-semibold text-foreground mb-2">Upcoming Events</h2>h2>
-                                  <p className="text-muted-foreground">Join local gatherings, workshops and meetups</p>p>
-                        </div>div>
+                                  <h2 className="text-xl font-semibold text-foreground mb-2">Upcoming Events</h2>
+                                  <p className="text-muted-foreground">Join local gatherings, workshops and meetups</p>
+                        </div>
                         <button
                                     onClick={() => setShowCreateModal(true)}
                                     className="p-3 bg-primary/10 rounded-full hover:bg-primary/20 transition-all duration-300 hover:scale-105"
                                     title="Create new event"
                                   >
                                   <Plus className="w-5 h-5 text-primary" />
-                        </button>button>
-                </div>div>
+                        </button>
+                </div>
           
             {isLoading ? (
                     <div className="space-y-4">
                       {[1, 2, 3].map(i => (
                                   <div key={i} className="bg-card rounded-2xl p-5 shadow-card border border-border animate-pulse h-40" />
                                 ))}
-                    </div>div>
+                    </div>
                   ) : (
                     <div className="space-y-4">
                       {events.length === 0 ? (
                                   <div className="bg-card rounded-2xl p-8 shadow-card border border-border text-center">
                                                 <Calendar className="w-12 h-12 text-muted-foreground mx-auto mb-4" />
-                                                <h3 className="text-lg font-semibold text-card-foreground mb-2">No Upcoming Events</h3>h3>
-                                                <p className="text-muted-foreground mb-4">Be the first to create an event for the community!</p>p>
+                                                <h3 className="text-lg font-semibold text-card-foreground mb-2">No Upcoming Events</h3>
+                                                <p className="text-muted-foreground mb-4">Be the first to create an event for the community!</p>
                                                 <button
                                                                   onClick={() => setShowCreateModal(true)}
                                                                   className="bg-gradient-button text-white px-6 py-2 rounded-full text-sm font-medium hover:opacity-90 transition-all"
                                                                 >
                                                                 Create an Event
-                                                </button>button>
-                                  </div>div>
+                                                </button>
+                                  </div>
                                 ) : (
                                   events.map(event => (
                                                   <div key={event.id} className="bg-card rounded-2xl p-5 shadow-card border border-border hover:shadow-elegant transition-all duration-300 animate-slide-up">
                                                                   <div className="flex items-start justify-between mb-3">
-                                                                                    <h3 className="text-lg font-semibold text-card-foreground">{event.title}</h3>h3>
+                                                                                    <h3 className="text-lg font-semibold text-card-foreground">{event.title}</h3>
                                                                                     <div className={`p-2 rounded-full ${getEventIconBg(event.event_type)}`}>
                                                                                       {getEventIcon(event.event_type)}
-                                                                                      </div>div>
-                                                                  </div>div>
+                                                                                      </div>
+                                                                  </div>
                                                     {event.description && (
-                                                                      <p className="text-sm text-muted-foreground mb-3 leading-relaxed">{event.description}</p>p>
+                                                                      <p className="text-sm text-muted-foreground mb-3 leading-relaxed">{event.description}</p>
                                                                   )}
                                                                   <div className="space-y-2 mb-4">
                                                                                     <div className="flex items-center gap-2 text-sm text-muted-foreground">
                                                                                                         <Calendar className="w-4 h-4" />
-                                                                                                        <span>{format(new Date(event.event_date), 'EEEE, MMMM d · h:mm a')}</span>span>
-                                                                                      </div>div>
+                                                                                                        <span>{format(new Date(event.event_date), 'EEEE, MMMM d · h:mm a')}</span>
+                                                                                      </div>
                                                                                     <div className="flex items-center gap-2 text-sm text-muted-foreground">
                                                                                       {event.is_virtual ? <Wifi className="w-4 h-4" /> : <MapPin className="w-4 h-4" />}
-                                                                                                        <span>{event.is_virtual ? 'Virtual Event' : (event.location || 'Location TBD')}</span>span>
-                                                                                      </div>div>
+                                                                                                        <span>{event.is_virtual ? 'Virtual Event' : (event.location || 'Location TBD')}</span>
+                                                                                      </div>
                                                                                     <div className="flex items-center gap-2 text-sm text-muted-foreground">
                                                                                                         <Users className="w-4 h-4" />
-                                                                                                        <span>{event.attendee_count} attending{event.max_attendees ? ` · ${event.max_attendees} spots total` : ''}</span>span>
-                                                                                      </div>div>
-                                                                  </div>div>
+                                                                                                        <span>{event.attendee_count} attending{event.max_attendees ? ` · ${event.max_attendees} spots total` : ''}</span>
+                                                                                      </div>
+                                                                  </div>
                                                                   <button
                                                                                       onClick={() => rsvpMutation.mutate({ eventId: event.id, isRsvpd: !!event.user_has_rsvpd })}
                                                                                       disabled={rsvpMutation.isPending}
@@ -199,11 +199,11 @@ const Events = () => {
                                                                                         }`}
                                                                                     >
                                                                     {event.user_has_rsvpd ? '✓ Going — Cancel RSVP' : 'Join Event'}
-                                                                  </button>button>
-                                                  </div>div>
+                                                                  </button>
+                                                  </div>
                                                 ))
                                 )}
-                    </div>div>
+                    </div>
                 )}
           
             {/* Create Event Modal */}
@@ -211,14 +211,14 @@ const Events = () => {
                     <div className="fixed inset-0 bg-black/50 flex items-center justify-center z-50 p-4">
                               <div className="bg-card rounded-2xl shadow-2xl w-full max-w-md max-h-[90vh] overflow-y-auto">
                                           <div className="flex items-center justify-between p-6 border-b border-border">
-                                                        <h3 className="text-lg font-semibold text-card-foreground">Create New Event</h3>h3>
+                                                        <h3 className="text-lg font-semibold text-card-foreground">Create New Event</h3>
                                                         <button onClick={() => setShowCreateModal(false)} className="p-1 hover:bg-secondary rounded-full">
                                                                         <X className="w-5 h-5" />
-                                                        </button>button>
-                                          </div>div>
+                                                        </button>
+                                          </div>
                                           <div className="p-6 space-y-4">
                                                         <div>
-                                                                        <label className="block text-sm font-medium text-foreground mb-1">Event Title *</label>label>
+                                                                        <label className="block text-sm font-medium text-foreground mb-1">Event Title *</label>
                                                                         <input
                                                                                             type="text"
                                                                                             value={form.title}
@@ -226,9 +226,9 @@ const Events = () => {
                                                                                             placeholder="e.g. Morning Wellness Walk"
                                                                                             className="w-full px-3 py-2 rounded-lg border border-border bg-background text-foreground text-sm focus:outline-none focus:ring-2 focus:ring-primary/30"
                                                                                           />
-                                                        </div>div>
+                                                        </div>
                                                         <div>
-                                                                        <label className="block text-sm font-medium text-foreground mb-1">Description</label>label>
+                                                                        <label className="block text-sm font-medium text-foreground mb-1">Description</label>
                                                                         <textarea
                                                                                             value={form.description}
                                                                                             onChange={e => setForm(f => ({ ...f, description: e.target.value }))}
@@ -236,10 +236,10 @@ const Events = () => {
                                                                                             rows={3}
                                                                                             className="w-full px-3 py-2 rounded-lg border border-border bg-background text-foreground text-sm focus:outline-none focus:ring-2 focus:ring-primary/30 resize-none"
                                                                                           />
-                                                        </div>div>
+                                                        </div>
                                                         <div className="grid grid-cols-2 gap-3">
                                                                         <div>
-                                                                                          <label className="block text-sm font-medium text-foreground mb-1">Date *</label>label>
+                                                                                          <label className="block text-sm font-medium text-foreground mb-1">Date *</label>
                                                                                           <input
                                                                                                                 type="date"
                                                                                                                 value={form.event_date}
@@ -247,19 +247,19 @@ const Events = () => {
                                                                                                                 min={new Date().toISOString().split('T')[0]}
                                                                                                                 className="w-full px-3 py-2 rounded-lg border border-border bg-background text-foreground text-sm focus:outline-none focus:ring-2 focus:ring-primary/30"
                                                                                                               />
-                                                                        </div>div>
+                                                                        </div>
                                                                         <div>
-                                                                                          <label className="block text-sm font-medium text-foreground mb-1">Time</label>label>
+                                                                                          <label className="block text-sm font-medium text-foreground mb-1">Time</label>
                                                                                           <input
                                                                                                                 type="time"
                                                                                                                 value={form.event_time}
                                                                                                                 onChange={e => setForm(f => ({ ...f, event_time: e.target.value }))}
                                                                                                                 className="w-full px-3 py-2 rounded-lg border border-border bg-background text-foreground text-sm focus:outline-none focus:ring-2 focus:ring-primary/30"
                                                                                                               />
-                                                                        </div>div>
-                                                        </div>div>
+                                                                        </div>
+                                                        </div>
                                                         <div>
-                                                                        <label className="block text-sm font-medium text-foreground mb-1">Event Type</label>label>
+                                                                        <label className="block text-sm font-medium text-foreground mb-1">Event Type</label>
                                                                         <select
                                                                                             value={form.event_type}
                                                                                             onChange={e => setForm(f => ({ ...f, event_type: e.target.value }))}
@@ -269,7 +269,7 @@ const Events = () => {
                                                                                                                 <option key={t} value={t}>{t.charAt(0).toUpperCase() + t.slice(1)}</option>option>
                                                                                                               ))}
                                                                         </select>select>
-                                                        </div>div>
+                                                        </div>
                                                         <div className="flex items-center gap-3">
                                                                         <button
                                                                                             type="button"
@@ -277,12 +277,12 @@ const Events = () => {
                                                                                             className={`relative w-10 h-6 rounded-full transition-colors ${form.is_virtual ? 'bg-primary' : 'bg-muted'}`}
                                                                                           >
                                                                                           <span className={`absolute top-1 w-4 h-4 bg-white rounded-full transition-transform ${form.is_virtual ? 'translate-x-5' : 'translate-x-1'}`} />
-                                                                        </button>button>
-                                                                        <label className="text-sm text-foreground">Virtual Event</label>label>
-                                                        </div>div>
+                                                                        </button>
+                                                                        <label className="text-sm text-foreground">Virtual Event</label>
+                                                        </div>
                                             {!form.is_virtual && (
                                       <div>
-                                                        <label className="block text-sm font-medium text-foreground mb-1">Location</label>label>
+                                                        <label className="block text-sm font-medium text-foreground mb-1">Location</label>
                                                         <input
                                                                               type="text"
                                                                               value={form.location}
@@ -290,10 +290,10 @@ const Events = () => {
                                                                               placeholder="e.g. Central Park, New York"
                                                                               className="w-full px-3 py-2 rounded-lg border border-border bg-background text-foreground text-sm focus:outline-none focus:ring-2 focus:ring-primary/30"
                                                                             />
-                                      </div>div>
+                                      </div>
                                                         )}
                                                         <div>
-                                                                        <label className="block text-sm font-medium text-foreground mb-1">Max Attendees (optional)</label>label>
+                                                                        <label className="block text-sm font-medium text-foreground mb-1">Max Attendees (optional)</label>
                                                                         <input
                                                                                             type="number"
                                                                                             value={form.max_attendees}
@@ -302,7 +302,7 @@ const Events = () => {
                                                                                             min="1"
                                                                                             className="w-full px-3 py-2 rounded-lg border border-border bg-background text-foreground text-sm focus:outline-none focus:ring-2 focus:ring-primary/30"
                                                                                           />
-                                                        </div>div>
+                                                        </div>
                                                         <div className="flex gap-3 pt-2">
                                                                         <button
                                                                                             onClick={() => createEventMutation.mutate()}
@@ -310,19 +310,19 @@ const Events = () => {
                                                                                             className="flex-1 bg-gradient-button text-white py-2.5 rounded-xl font-medium disabled:opacity-50 hover:opacity-90 transition-all"
                                                                                           >
                                                                           {createEventMutation.isPending ? 'Creating...' : 'Create Event'}
-                                                                        </button>button>
+                                                                        </button>
                                                                         <button
                                                                                             onClick={() => setShowCreateModal(false)}
                                                                                             className="px-4 py-2.5 rounded-xl border border-border text-foreground hover:bg-secondary transition-all"
                                                                                           >
                                                                                           Cancel
-                                                                        </button>button>
-                                                        </div>div>
-                                          </div>div>
-                              </div>div>
-                    </div>div>
+                                                                        </button>
+                                                        </div>
+                                          </div>
+                              </div>
+                    </div>
                 )}
-          </div>div>
+          </div>
         );
 };
 
