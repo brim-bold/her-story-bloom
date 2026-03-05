@@ -73,7 +73,7 @@ const Profile = () => {
                                   <Button variant="ghost" size="sm" onClick={() => navigate('/')} className="hover:bg-secondary">
                                               <ArrowLeft className="w-4 h-4 mr-2" />
                                               Back
-                                  </Button>Button>
+                                  </Button>
                                   <h1 className="text-2xl font-bold text-foreground font-serif">My Profile</h1>
                         </div>
                 
@@ -84,11 +84,11 @@ const Profile = () => {
                                                             <AvatarImage src={profile?.avatar_url || undefined} alt="Profile picture" />
                                                             <AvatarFallback className="bg-gradient-to-br from-primary to-accent text-white text-2xl font-semibold">
                                                               {profile?.first_name?.[0] || ''}{profile?.last_name?.[0] || ''}
-                                                            </AvatarFallback>AvatarFallback>
-                                              </Avatar>Avatar>
+                                                            </AvatarFallback>
+                                              </Avatar>
                                               <CardTitle className="text-2xl text-card-foreground">
                                                 {profile?.first_name} {profile?.last_name}
-                                              </CardTitle>CardTitle>
+                                              </CardTitle>
                                               <button
                                                               onClick={() => navigate('/edit-profile')}
                                                               className="flex items-center justify-center gap-1 text-muted-foreground mt-2 hover:text-primary transition-colors mx-auto"
@@ -99,7 +99,7 @@ const Profile = () => {
                                                             </span>
                                                 {profile?.age && <><span>•</span><span>{profile.age as number} years old</span></>>}
                                               </button>
-                                  </CardHeader>CardHeader>
+                                  </CardHeader>
                         
                                   <CardContent className="space-y-6">
                                     {/* Bio Section */}
@@ -134,7 +134,7 @@ const Profile = () => {
                               {(profile.interests as string[]).map((interest, index) => (
                                                   <Badge key={index} variant="secondary" className="bg-secondary text-secondary-foreground">
                                                     {interest}
-                                                  </Badge>Badge>
+                                                  </Badge>
                                                 ))}
                             </div>
                                                             )}
@@ -157,8 +157,8 @@ const Profile = () => {
                                                                             <div className="text-sm text-muted-foreground">Events Joined</div>
                                                             </button>
                                               </div>
-                                  </CardContent>CardContent>
-                        </Card>Card>
+                                  </CardContent>
+                        </Card>
                 
                   {/* Quick Actions */}
                         <div className="grid gap-4 md:grid-cols-2 lg:grid-cols-3">
@@ -171,8 +171,8 @@ const Profile = () => {
                                                                             <h3 className="font-semibold text-card-foreground">Edit Profile</h3>
                                                                             <p className="text-sm text-muted-foreground">Update your information</p>
                                                             </div>
-                                              </CardContent>CardContent>
-                                  </Card>Card>
+                                              </CardContent>
+                                  </Card>
                                   <Card className="hover:shadow-elegant transition-all duration-300 cursor-pointer" onClick={() => navigate('/settings')}>
                                               <CardContent className="flex items-center gap-4 p-6">
                                                             <div className="w-12 h-12 bg-accent/10 rounded-full flex items-center justify-center">
@@ -182,8 +182,8 @@ const Profile = () => {
                                                                             <h3 className="font-semibold text-card-foreground">Settings</h3>
                                                                             <p className="text-sm text-muted-foreground">Privacy & preferences</p>
                                                             </div>
-                                              </CardContent>CardContent>
-                                  </Card>Card>
+                                              </CardContent>
+                                  </Card>
                                   <Card className="hover:shadow-elegant transition-all duration-300 cursor-pointer" onClick={() => navigate('/help-support')}>
                                               <CardContent className="flex items-center gap-4 p-6">
                                                             <div className="w-12 h-12 bg-coral/10 rounded-full flex items-center justify-center">
@@ -193,8 +193,8 @@ const Profile = () => {
                                                                             <h3 className="font-semibold text-card-foreground">Help & Support</h3>
                                                                             <p className="text-sm text-muted-foreground">Get assistance</p>
                                                             </div>
-                                              </CardContent>CardContent>
-                                  </Card>Card>
+                                              </CardContent>
+                                  </Card>
                         </div>
                 
                   {/* Member Since */}
@@ -204,8 +204,8 @@ const Profile = () => {
                                               <span className="text-sm text-muted-foreground">
                                                             Member since {new Date(profile?.created_at as string || Date.now()).toLocaleDateString('en-US', { year: 'numeric', month: 'long' })}
                                               </span>
-                                  </CardContent>CardContent>
-                        </Card>Card>
+                                  </CardContent>
+                        </Card>
                 </div>
           </div>
         );
