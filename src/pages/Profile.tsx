@@ -56,8 +56,8 @@ const Profile = () => {
     if (loading) {
           return (
                   <div className="min-h-screen bg-gradient-profile flex items-center justify-center">
-                          <div className="text-foreground text-xl">Loading...</div>div>
-                  </div>div>
+                          <div className="text-foreground text-xl">Loading...</div>
+                  </div>
                 );
     }
   
@@ -74,8 +74,8 @@ const Profile = () => {
                                               <ArrowLeft className="w-4 h-4 mr-2" />
                                               Back
                                   </Button>Button>
-                                  <h1 className="text-2xl font-bold text-foreground font-serif">My Profile</h1>h1>
-                        </div>div>
+                                  <h1 className="text-2xl font-bold text-foreground font-serif">My Profile</h1>
+                        </div>
                 
                   {/* Profile Card */}
                         <Card className="mb-6 shadow-card border-border">
@@ -96,15 +96,15 @@ const Profile = () => {
                                                             <MapPin className="w-4 h-4" />
                                                             <span className={hasNoLocation ? 'text-primary/70 text-sm underline-offset-2 hover:underline' : ''}>
                                                               {profile?.location || 'Add your location'}
-                                                            </span>span>
-                                                {profile?.age && <><span>•</span>span><span>{profile.age as number} years old</span>span></>>}
-                                              </button>button>
+                                                            </span>
+                                                {profile?.age && <><span>•</span><span>{profile.age as number} years old</span></>>}
+                                              </button>
                                   </CardHeader>CardHeader>
                         
                                   <CardContent className="space-y-6">
                                     {/* Bio Section */}
                                               <div>
-                                                            <h3 className="text-lg font-semibold text-card-foreground mb-3">About Me</h3>h3>
+                                                            <h3 className="text-lg font-semibold text-card-foreground mb-3">About Me</h3>
                                                 {hasNoBio ? (
                             <button
                                                 onClick={() => navigate('/edit-profile')}
@@ -112,15 +112,15 @@ const Profile = () => {
                                               >
                                               <Plus className="w-4 h-4" />
                                               Add a bio to tell your story and connect with like-minded women
-                            </button>button>
+                            </button>
                           ) : (
-                            <p className="text-card-foreground/80 leading-relaxed">{profile.bio as string}</p>p>
+                            <p className="text-card-foreground/80 leading-relaxed">{profile.bio as string}</p>
                                                             )}
-                                              </div>div>
+                                              </div>
                                   
                                     {/* Interests Section */}
                                               <div>
-                                                            <h3 className="text-lg font-semibold text-card-foreground mb-3">Interests</h3>h3>
+                                                            <h3 className="text-lg font-semibold text-card-foreground mb-3">Interests</h3>
                                                 {hasNoInterests ? (
                             <button
                                                 onClick={() => navigate('/edit-profile')}
@@ -128,7 +128,7 @@ const Profile = () => {
                                               >
                                               <Plus className="w-4 h-4" />
                                               Add interests to help other women find and connect with you
-                            </button>button>
+                            </button>
                           ) : (
                             <div className="flex flex-wrap gap-2">
                               {(profile.interests as string[]).map((interest, index) => (
@@ -136,9 +136,9 @@ const Profile = () => {
                                                     {interest}
                                                   </Badge>Badge>
                                                 ))}
-                            </div>div>
+                            </div>
                                                             )}
-                                              </div>div>
+                                              </div>
                                   
                                     {/* Stats Section */}
                                               <div className="grid grid-cols-2 gap-4 pt-4 border-t border-border">
@@ -146,17 +146,17 @@ const Profile = () => {
                                                                               onClick={() => navigate('/discover')}
                                                                               className="text-center hover:bg-secondary/50 rounded-xl p-3 transition-all"
                                                                             >
-                                                                            <div className="text-2xl font-bold text-primary">{stats.connections}</div>div>
-                                                                            <div className="text-sm text-muted-foreground">Connections</div>div>
-                                                            </button>button>
+                                                                            <div className="text-2xl font-bold text-primary">{stats.connections}</div>
+                                                                            <div className="text-sm text-muted-foreground">Connections</div>
+                                                            </button>
                                                             <button
                                                                               onClick={() => navigate('/events')}
                                                                               className="text-center hover:bg-secondary/50 rounded-xl p-3 transition-all"
                                                                             >
-                                                                            <div className="text-2xl font-bold text-accent">{stats.eventsJoined}</div>div>
-                                                                            <div className="text-sm text-muted-foreground">Events Joined</div>div>
-                                                            </button>button>
-                                              </div>div>
+                                                                            <div className="text-2xl font-bold text-accent">{stats.eventsJoined}</div>
+                                                                            <div className="text-sm text-muted-foreground">Events Joined</div>
+                                                            </button>
+                                              </div>
                                   </CardContent>CardContent>
                         </Card>Card>
                 
@@ -166,36 +166,36 @@ const Profile = () => {
                                               <CardContent className="flex items-center gap-4 p-6">
                                                             <div className="w-12 h-12 bg-primary/10 rounded-full flex items-center justify-center">
                                                                             <Edit className="w-6 h-6 text-primary" />
-                                                            </div>div>
+                                                            </div>
                                                             <div>
-                                                                            <h3 className="font-semibold text-card-foreground">Edit Profile</h3>h3>
-                                                                            <p className="text-sm text-muted-foreground">Update your information</p>p>
-                                                            </div>div>
+                                                                            <h3 className="font-semibold text-card-foreground">Edit Profile</h3>
+                                                                            <p className="text-sm text-muted-foreground">Update your information</p>
+                                                            </div>
                                               </CardContent>CardContent>
                                   </Card>Card>
                                   <Card className="hover:shadow-elegant transition-all duration-300 cursor-pointer" onClick={() => navigate('/settings')}>
                                               <CardContent className="flex items-center gap-4 p-6">
                                                             <div className="w-12 h-12 bg-accent/10 rounded-full flex items-center justify-center">
                                                                             <Settings className="w-6 h-6 text-accent" />
-                                                            </div>div>
+                                                            </div>
                                                             <div>
-                                                                            <h3 className="font-semibold text-card-foreground">Settings</h3>h3>
-                                                                            <p className="text-sm text-muted-foreground">Privacy & preferences</p>p>
-                                                            </div>div>
+                                                                            <h3 className="font-semibold text-card-foreground">Settings</h3>
+                                                                            <p className="text-sm text-muted-foreground">Privacy & preferences</p>
+                                                            </div>
                                               </CardContent>CardContent>
                                   </Card>Card>
                                   <Card className="hover:shadow-elegant transition-all duration-300 cursor-pointer" onClick={() => navigate('/help-support')}>
                                               <CardContent className="flex items-center gap-4 p-6">
                                                             <div className="w-12 h-12 bg-coral/10 rounded-full flex items-center justify-center">
                                                                             <HelpCircle className="w-6 h-6 text-coral" />
-                                                            </div>div>
+                                                            </div>
                                                             <div>
-                                                                            <h3 className="font-semibold text-card-foreground">Help & Support</h3>h3>
-                                                                            <p className="text-sm text-muted-foreground">Get assistance</p>p>
-                                                            </div>div>
+                                                                            <h3 className="font-semibold text-card-foreground">Help & Support</h3>
+                                                                            <p className="text-sm text-muted-foreground">Get assistance</p>
+                                                            </div>
                                               </CardContent>CardContent>
                                   </Card>Card>
-                        </div>div>
+                        </div>
                 
                   {/* Member Since */}
                         <Card className="mt-6 shadow-card border-border">
@@ -203,11 +203,11 @@ const Profile = () => {
                                               <Calendar className="w-5 h-5 text-muted-foreground" />
                                               <span className="text-sm text-muted-foreground">
                                                             Member since {new Date(profile?.created_at as string || Date.now()).toLocaleDateString('en-US', { year: 'numeric', month: 'long' })}
-                                              </span>span>
+                                              </span>
                                   </CardContent>CardContent>
                         </Card>Card>
-                </div>div>
-          </div>div>
+                </div>
+          </div>
         );
 };
 
