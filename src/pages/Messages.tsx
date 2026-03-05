@@ -71,9 +71,9 @@ const Messages = () => {
     return (
           <div className="flex-1 bg-gradient-messages p-6 animate-fade-in">
                 <div className="mb-6">
-                        <h2 className="text-xl font-semibold text-foreground mb-2 font-serif">Messages</h2>h2>
-                        <p className="text-muted-foreground">Your conversations</p>p>
-                </div>div>
+                        <h2 className="text-xl font-semibold text-foreground mb-2 font-serif">Messages</h2>
+                        <p className="text-muted-foreground">Your conversations</p>
+                </div>
           
                 <div className="space-y-3">
                   {isLoading ? (
@@ -81,7 +81,7 @@ const Messages = () => {
                         {[1, 2, 3].map(i => (
                                       <div key={i} className="bg-card rounded-xl p-4 border border-border animate-pulse h-20" />
                                     ))}
-                      </div>div>
+                      </div>
                     ) : conversations && conversations.length > 0 ? (
                       conversations.map(conv => {
                                     const otherParticipant = conv.participants.find(p => p.user_id !== user?.id);
@@ -101,18 +101,18 @@ const Messages = () => {
                                                                     <div className="flex items-center gap-4">
                                                                                       <div className="w-12 h-12 bg-gradient-to-br from-primary/20 to-secondary/20 rounded-full flex items-center justify-center text-lg font-semibold text-primary">
                                                                                         {participantName.charAt(0).toUpperCase()}
-                                                                                        </div>div>
+                                                                                        </div>
                                                                                       <div className="flex-1 text-left">
                                                                                                           <div className="flex items-center justify-between mb-1">
-                                                                                                                                <h3 className="font-semibold text-card-foreground">{participantName}</h3>h3>
-                                                                                                                                <span className="text-xs text-muted-foreground">{timeAgo}</span>span>
-                                                                                                            </div>div>
+                                                                                                                                <h3 className="font-semibold text-card-foreground">{participantName}</h3>
+                                                                                                                                <span className="text-xs text-muted-foreground">{timeAgo}</span>
+                                                                                                            </div>
                                                                                                           <p className="text-sm text-muted-foreground truncate">
                                                                                                             {isFromCurrentUser && 'You: '}{messagePreview}
-                                                                                                            </p>p>
-                                                                                        </div>div>
-                                                                    </div>div>
-                                                    </button>button>
+                                                                                                            </p>
+                                                                                        </div>
+                                                                    </div>
+                                                    </button>
                                                   );
                       })
                     ) : (
@@ -120,25 +120,25 @@ const Messages = () => {
                       <div className="flex flex-col items-center justify-center py-16 text-center">
                                   <div className="w-20 h-20 bg-primary/10 rounded-full flex items-center justify-center mb-5">
                                                 <MessageCircle className="w-10 h-10 text-primary/50" />
-                                  </div>div>
-                                  <h3 className="text-lg font-semibold text-foreground mb-2">No conversations yet</h3>h3>
+                                  </div>
+                                  <h3 className="text-lg font-semibold text-foreground mb-2">No conversations yet</h3>
                                   <p className="text-muted-foreground text-sm max-w-xs mb-2">
                                                 Messages unlock after a mutual connection is made in the Member Directory.
-                                  </p>p>
+                                  </p>
                                   <p className="text-muted-foreground/70 text-xs max-w-xs mb-6">
                                                 Connect with another member and once they connect back, you'll be able to message each other here.
-                                  </p>p>
+                                  </p>
                                   <button
                                                   onClick={() => navigate('/discover')}
                                                   className="flex items-center gap-2 bg-gradient-button text-white px-6 py-3 rounded-full font-medium hover:opacity-90 transition-all hover:scale-105 shadow-md"
                                                 >
                                                 <Users className="w-4 h-4" />
                                                 Find Members to Connect With
-                                  </button>button>
-                      </div>div>
+                                  </button>
+                      </div>
                         )}
-                </div>div>
-          </div>div>
+                </div>
+          </div>
         );
 };
 
