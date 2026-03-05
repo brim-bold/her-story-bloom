@@ -32,27 +32,27 @@ export function AppLayout({ children }: AppLayoutProps) {
                                                             alt="Her Story Collective Logo"
                                                             className="h-20 w-auto object-contain transition-all duration-300 dark:invert"
                                                           />
-                                </div>div>
+                                </div>
                                 <header className="h-16 bg-gradient-to-r from-primary/10 to-accent/10 border-b border-border flex items-center justify-between px-4">
                                             <div className="flex items-center gap-3">
                                                           <SidebarTrigger className="p-2 hover:bg-secondary rounded-lg transition-colors border border-border/50 hover:border-primary/30" />
-                                            </div>div>
+                                            </div>
                                             <button
                                                             onClick={handleSignOut}
                                                             className="p-2 hover:bg-secondary rounded-lg transition-colors"
                                                             title="Sign Out"
                                                           >
                                                           <LogOut className="w-6 h-6 text-icon-color" />
-                                            </button>button>
-                                </header>header>
+                                            </button>
+                                </header>
                                 <div className="flex flex-1">
                                             <AppSidebar />
                                             <main className="flex-1 overflow-auto">
                                               {children}
-                                            </main>main>
-                                </div>div>
-                      </div>div>
-              </div>div>
-        </SidebarProvider>SidebarProvider>
+                                            </main>
+                                </div>
+                      </div>
+              </div>
+        </SidebarProvider>
       );
 }</SidebarProvider>
