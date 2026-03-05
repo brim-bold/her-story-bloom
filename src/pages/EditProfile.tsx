@@ -119,8 +119,8 @@ const EditProfile = () => {
     if (loading) {
           return (
                   <div className="min-h-screen bg-gradient-profile flex items-center justify-center">
-                          <div className="text-foreground text-xl">Loading...</div>div>
-                  </div>div>
+                          <div className="text-foreground text-xl">Loading...</div>
+                  </div>
                 );
     }
   
@@ -135,26 +135,26 @@ const EditProfile = () => {
                                               <ArrowLeft className="w-4 h-4 mr-2" />
                                               Back
                                   </Button>Button>
-                                  <h1 className="text-2xl font-bold text-foreground font-serif">Edit Profile</h1>h1>
-                        </div>div>
+                                  <h1 className="text-2xl font-bold text-foreground font-serif">Edit Profile</h1>
+                        </div>
                 
                   {/* Profile Completeness */}
                         <Card className="mb-4 shadow-card border-border">
                                   <CardContent className="p-4">
                                               <div className="flex items-center justify-between mb-2">
-                                                            <span className="text-sm font-medium text-foreground">Profile completeness</span>span>
-                                                            <span className="text-sm font-bold text-primary">{completeness}%</span>span>
-                                              </div>div>
+                                                            <span className="text-sm font-medium text-foreground">Profile completeness</span>
+                                                            <span className="text-sm font-bold text-primary">{completeness}%</span>
+                                              </div>
                                               <div className="w-full bg-secondary rounded-full h-2">
                                                             <div
                                                                               className="bg-gradient-button h-2 rounded-full transition-all duration-500"
                                                                               style={{ width: `${completeness}%` }}
                                                                             />
-                                              </div>div>
+                                              </div>
                                     {completeness < 100 && (
                           <p className="text-xs text-muted-foreground mt-2">
                                           Complete your profile to appear in the member directory and get more connections!
-                          </p>p>
+                          </p>
                                               )}
                                   </CardContent>CardContent>
                         </Card>Card>
@@ -164,7 +164,7 @@ const EditProfile = () => {
                                               <CardTitle className="flex items-center gap-2">
                                                             <div className="w-8 h-8 bg-primary/10 rounded-full flex items-center justify-center">
                                                                             <Save className="w-4 h-4 text-primary" />
-                                                            </div>div>
+                                                            </div>
                                                             Update Your Information
                                               </CardTitle>CardTitle>
                                   </CardHeader>CardHeader>
@@ -176,7 +176,7 @@ const EditProfile = () => {
                                                                               onAvatarUpdate={handleAvatarUpdate}
                                                                               size="lg"
                                                                             />
-                                              </div>div>
+                                              </div>
                                   
                                     {/* Name Fields */}
                                               <div className="grid grid-cols-2 gap-4">
@@ -188,7 +188,7 @@ const EditProfile = () => {
                                                                                                 onChange={e => handleInputChange('first_name', e.target.value)}
                                                                                                 placeholder="Your first name"
                                                                                               />
-                                                            </div>div>
+                                                            </div>
                                                             <div className="space-y-2">
                                                                             <Label htmlFor="lastName">Last Name</Label>Label>
                                                                             <Input
@@ -197,8 +197,8 @@ const EditProfile = () => {
                                                                                                 onChange={e => handleInputChange('last_name', e.target.value)}
                                                                                                 placeholder="Your last name"
                                                                                               />
-                                                            </div>div>
-                                              </div>div>
+                                                            </div>
+                                              </div>
                                   
                                     {/* Location and Age */}
                                               <div className="grid grid-cols-2 gap-4">
@@ -210,7 +210,7 @@ const EditProfile = () => {
                                                                                                 onChange={e => handleInputChange('location', e.target.value)}
                                                                                                 placeholder="e.g. Miami, FL"
                                                                                               />
-                                                            </div>div>
+                                                            </div>
                                                             <div className="space-y-2">
                                                                             <Label htmlFor="age">Age</Label>Label>
                                                                             <Input
@@ -222,8 +222,8 @@ const EditProfile = () => {
                                                                                                 min="18"
                                                                                                 max="100"
                                                                                               />
-                                                            </div>div>
-                                              </div>div>
+                                                            </div>
+                                              </div>
                                   
                                     {/* Bio */}
                                               <div className="space-y-2">
@@ -237,8 +237,8 @@ const EditProfile = () => {
                                                                               className="resize-none"
                                                                               maxLength={500}
                                                                             />
-                                                            <p className="text-sm text-muted-foreground">{formData.bio.length}/500 characters</p>p>
-                                              </div>div>
+                                                            <p className="text-sm text-muted-foreground">{formData.bio.length}/500 characters</p>
+                                              </div>
                                   
                                     {/* Interests */}
                                               <div className="space-y-4">
@@ -259,10 +259,10 @@ const EditProfile = () => {
                                                                                                   className="ml-1 hover:bg-destructive/20 rounded-full p-0.5"
                                                                                                 >
                                                                                                 <X className="w-3 h-3" />
-                                                                        </button>button>
+                                                                        </button>
                                                   </Badge>Badge>
                                                 ))}
-                            </div>div>
+                            </div>
                                                             )}
                                               
                                                 {/* Add custom interest */}
@@ -281,12 +281,12 @@ const EditProfile = () => {
                                                                                               >
                                                                                               <Plus className="w-4 h-4" />
                                                                             </Button>Button>
-                                                            </div>div>
+                                                            </div>
                                               
                                                 {/* Suggested interests */}
                                                 {unusedSuggestions.length > 0 && (
                             <div>
-                                              <p className="text-xs text-muted-foreground mb-2">Tap to add suggested interests:</p>p>
+                                              <p className="text-xs text-muted-foreground mb-2">Tap to add suggested interests:</p>
                                               <div className="flex flex-wrap gap-2">
                                                 {unusedSuggestions.map(suggestion => (
                                                     <button
@@ -296,18 +296,18 @@ const EditProfile = () => {
                                                                               className="px-3 py-1 text-xs rounded-full border border-border text-muted-foreground hover:border-primary/50 hover:text-primary hover:bg-primary/5 transition-all"
                                                                             >
                                                                             + {suggestion}
-                                                    </button>button>
+                                                    </button>
                                                   ))}
-                                              </div>div>
-                            </div>div>
+                                              </div>
+                            </div>
                                                             )}
                                               
                                                 {formData.interests.length === 0 && (
                             <p className="text-sm text-muted-foreground">
                                               Add interests to help other women find and connect with you
-                            </p>p>
+                            </p>
                                                             )}
-                                              </div>div>
+                                              </div>
                                   
                                     {/* Save Button */}
                                               <div className="flex gap-3 pt-4">
@@ -321,11 +321,11 @@ const EditProfile = () => {
                                                             <Button variant="outline" onClick={() => navigate('/profile')} disabled={saving}>
                                                                             Cancel
                                                             </Button>Button>
-                                              </div>div>
+                                              </div>
                                   </CardContent>CardContent>
                         </Card>Card>
-                </div>div>
-          </div>div>
+                </div>
+          </div>
         );
 };
 
