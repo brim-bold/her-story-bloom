@@ -63,7 +63,7 @@ const Profile = () => {
   
     const hasNoLocation = !profile?.location;
     const hasNoBio = !profile?.bio;
-    const hasNoInterests = !profile?.interests || ((profile.interests as string[])).length === 0;
+    const hasNoInterests = !profile?.interests || (((profile.interests as string[]))).length === 0;
   
     return (
           <div className="min-h-screen bg-gradient-profile">
@@ -97,7 +97,7 @@ const Profile = () => {
                                                             <span className={hasNoLocation ? 'text-primary/70 text-sm underline-offset-2 hover:underline' : ''}>
                                                               {profile?.location || 'Add your location'}
                                                             </span>
-                                                {profile?.age && <><span>•</span><span>{profile.age} years old</span></>>}
+                                                {profile?.age && <><span>•</span><span>{profile.age} years old</span></>}
                                               </button>
                                   </CardHeader>
                         
@@ -131,7 +131,7 @@ const Profile = () => {
                             </button>
                           ) : (
                             <div className="flex flex-wrap gap-2">
-                              {((profile.interests as string[])).map((interest, index) => (
+                              {(((profile.interests as string[]))).map((interest, index) => (
                                                   <Badge key={index} variant="secondary" className="bg-secondary text-secondary-foreground">
                                                     {interest}
                                                   </Badge>
@@ -211,4 +211,4 @@ const Profile = () => {
         );
 };
 
-export default Profile;</></div>
+export default Profile;
