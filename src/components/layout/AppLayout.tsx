@@ -55,4 +55,4 @@ export function AppLayout({ children }: AppLayoutProps) {
               </div>
         </SidebarProvider>
       );
-}</SidebarProvider>
+}
